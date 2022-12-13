@@ -1,0 +1,197 @@
+require 'Foraging/forageSystem'
+
+Events.onAddForageDefs.Add(function()
+
+    local spriteAffinities = {
+        genericPlants = {
+            "d_generic_1_17",
+            "d_generic_1_18",
+            "d_generic_1_19",
+            "d_generic_1_47",
+            "d_generic_1_48",
+            "d_generic_1_49",
+            "d_generic_1_50",
+            "d_generic_1_51",
+            "d_generic_1_52",
+            "d_generic_1_53",
+            "d_generic_1_54",
+            "d_generic_1_55",
+            "d_generic_1_80",
+            "d_generic_1_81",
+            "d_generic_1_82",
+            "d_generic_1_83",
+            "d_generic_1_84",
+            "d_generic_1_85",
+            "d_generic_1_86",
+            "d_generic_1_87",
+            "d_plants_1_0",
+            "d_plants_1_1",
+            "d_plants_1_2",
+            "d_plants_1_3",
+            "d_plants_1_4",
+            "d_plants_1_5",
+            "d_plants_1_6",
+            "d_plants_1_7",
+            "d_plants_1_8",
+            "d_plants_1_9",
+            "d_plants_1_10",
+            "d_plants_1_11",
+            "d_plants_1_12",
+            "d_plants_1_13",
+            "d_plants_1_14",
+            "d_plants_1_15",
+            "d_plants_1_16",
+            "d_plants_1_17",
+            "d_plants_1_18",
+            "d_plants_1_19",
+            "d_plants_1_20",
+            "d_plants_1_21",
+            "d_plants_1_22",
+            "d_plants_1_23",
+            "d_plants_1_24",
+            "d_plants_1_25",
+            "d_plants_1_26",
+            "d_plants_1_27",
+            "d_plants_1_28",
+            "d_plants_1_29",
+            "d_plants_1_30",
+            "d_plants_1_31",
+            "d_plants_1_32",
+            "d_plants_1_33",
+            "d_plants_1_34",
+            "d_plants_1_35",
+            "d_plants_1_36",
+            "d_plants_1_37",
+            "d_plants_1_38",
+            "d_plants_1_39",
+            "d_plants_1_40",
+            "d_plants_1_41",
+            "d_plants_1_42",
+            "d_plants_1_43",
+            "d_plants_1_44",
+            "d_plants_1_45",
+            "d_plants_1_46",
+            "d_plants_1_47",
+            "d_plants_1_48",
+            "d_plants_1_49",
+            "d_plants_1_50",
+            "d_plants_1_51",
+            "d_plants_1_52",
+            "d_plants_1_53",
+            "d_plants_1_54",
+            "d_plants_1_55",
+            "d_plants_1_56",
+            "d_plants_1_57",
+            "d_plants_1_58",
+            "d_plants_1_59",
+            "d_plants_1_60",
+            "d_plants_1_61",
+            "d_plants_1_62",
+            "d_plants_1_63",
+        }
+    }
+
+        local Artifacts = {
+            name                    = "Artifacts",
+            typeCategory            = "Artifacts",
+            identifyCategoryPerk    = "Artifact Hunting",
+            identifyCategoryLevel   = 5,
+            categoryHidden          = false,
+            validFloors             = { "ANY" },
+            zoneChance              = {
+                DeepForest      = 15,
+                Forest          = 15,
+                Vegitation      = 25,
+                FarmLand        = 20,
+                Farm            = 20,
+                TrailerPark     = 5,
+                TownZone        = 5,
+                Nav             = 3,
+            },
+            spriteAffinities        = spriteAffinities.genericPlants,
+            chanceToMoveIcon        = 3.0,
+            chanceToCreateIcon      = 0.1,
+            focusChanceMin			= 5.0,
+            focusChanceMax			= 15.0,
+        }
+
+        local MidArtifacts = {
+            name                    = "MidArtifacts",
+            typeCategory            = "MidArtifacts",
+            identifyCategoryPerk    = "Artifact Hunting",
+            identifyCategoryLevel   = 5,
+            categoryHidden          = false,
+            validFloors             = { "ANY" },
+            zoneChance              = {
+                DeepForest      = 15,
+                Forest          = 15,
+                Vegitation      = 25,
+                FarmLand        = 20,
+                Farm            = 20,
+                TrailerPark     = 5,
+                TownZone        = 5,
+                Nav             = 3,
+            },
+            spriteAffinities        = spriteAffinities.genericPlants,
+            chanceToMoveIcon        = 3.0,
+            chanceToCreateIcon      = 0.1,
+            focusChanceMin			= 5.0,
+            focusChanceMax			= 15.0,
+        }
+
+        local RareArtifacts = {
+            name                    = "RareArtifacts",
+            typeCategory            = "RareArtifacts",
+            identifyCategoryPerk    = "Artifact Hunting",
+            identifyCategoryLevel   = 5,
+            categoryHidden          = false,
+            validFloors             = { "ANY" },
+            zoneChance              = {
+                DeepForest      = 15,
+                Forest          = 15,
+                Vegitation      = 25,
+                FarmLand        = 20,
+                Farm            = 20,
+                TrailerPark     = 5,
+                TownZone        = 5,
+                Nav             = 3,
+            },
+            spriteAffinities        = spriteAffinities.genericPlants,
+            chanceToMoveIcon        = 3.0,
+            chanceToCreateIcon      = 0.1,
+            focusChanceMin			= 5.0,
+            focusChanceMax			= 15.0,
+        }
+
+
+        local AnomalousZone = {
+            name = "AnomalousZone",
+            densityMin = 8,
+            densityMax = 10,
+            refillPercent = 7,
+            abundanceSetting = "NatureAbundance",
+        }
+
+
+        --======== Shit Artifacts ========--
+        local Fireball = {
+            type = "Anomalies.Fireball",
+            skill = 3,
+            xp = 5,
+            perks = { "ArtifactHunting" },
+            itemTags = { "commonAnomaliesArtifactDetector" },
+            categories = { "Artifacts" },
+            zones = {
+                DeepForest  = 3,
+                Forest      = 2,
+                Vegitation  = 1,
+            },
+        }
+
+
+forageSystem.addCatDef(Artifacts)
+forageSystem.addCatDef(MidArtifacts)
+forageSystem.addCatDef(RareArtifacts)
+forageSystem.addItemDef(Fireball);
+
+end)

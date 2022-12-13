@@ -1,0 +1,11 @@
+module Base
+{
+	sound ArtifactBeep
+	{
+		category = Player,
+		clip
+		{
+			file = media/sound/artifactbeep.ogg,
+		}
+	}
+}

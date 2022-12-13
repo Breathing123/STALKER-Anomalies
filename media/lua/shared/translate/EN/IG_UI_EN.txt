@@ -1,0 +1,8 @@
+IGUI_EN = {
+    IGUI_ItemCat_ArtifactDetector = "Artifact Detector",
+    IGUI_ItemCat_Artifact = "Artifact",
+    IGUI_perks_ArtifactHunting = "Artifact Hunting",
+    IGUI_SearchMode_Categories_Artifacts = "Common Artifacts",
+    IGUI_SearchMode_Categories_MidArtifacts = "Uncommon Artifacts",
+    IGUI_SearchMode_Categories_RareArtifacts = "Rare Artifacts",
+}

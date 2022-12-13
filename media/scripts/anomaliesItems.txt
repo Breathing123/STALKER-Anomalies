@@ -1,0 +1,40 @@
+module Anomalies
+{
+	imports
+    	{
+             Base,
+    	}
+		
+	item EchoDetector
+    {
+        DisplayCategory = ArtifactDetector,
+        Weight	=	0.5,
+        Type	=	Drainable,
+        DisplayName	=   Echo Detector,
+        Icon	=	BakingTray,
+        WorldStaticModel = BakingTray,
+        ActivatedItem = TRUE,
+        Tags = commonAnomaliesArtifactDetector,
+    }
+
+    	item SuperDetector
+    {
+        DisplayCategory = ArtifactDetector,
+        Weight	=	0.5,
+        Type	=	Drainable,
+        DisplayName	=  Super Detector,
+        Icon	=	BakingTray,
+        WorldStaticModel = BakingTray,
+        ActivatedItem = TRUE,
+        Tags = uncommonAnomaliesArtifactDetector,
+    }
+
+    item Fireball
+    {
+        DisplayCategory = Artifact,
+        Weight	=	0.5,
+        DisplayName	=   Fireball,
+        Icon	=	BakingTray,
+        WorldStaticModel = BakingTray,
+    }
+}
